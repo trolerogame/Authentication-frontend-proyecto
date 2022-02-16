@@ -22,7 +22,7 @@ const Input = ({
 					type={type}
 					name={type}
 					validate={vl}
-					onKeyUp={(e) => {
+					onKeyUp={(e:any) => {
 						const value = e.currentTarget.value
 						setValidate(
 							value ? value.match(
@@ -37,7 +37,7 @@ const Input = ({
 					ref={reference}
 					name={type}
 					validate={vl}
-					onKeyUp={(e) => {
+					onKeyUp={(e:any) => {
 						const value = e.currentTarget.value
 						setValidate(
 							value ? value.match(

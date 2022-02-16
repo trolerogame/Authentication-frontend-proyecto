@@ -44,7 +44,7 @@ export const EditStyle = styled(InputStyle)`
 	${textEditStyle}
 `
 
-export const Textarea = styled.textarea`
+export const Textarea:any = styled.textarea`
 	height: 70px;
 	padding-top: 20px;
 	border:1px solid ${({ validate }: any) =>

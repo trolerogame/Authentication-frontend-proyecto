@@ -39,7 +39,7 @@ export const Card = styled.div`
     }
 `
 
-export const InputStyle = styled.input`
+export const InputStyle:any = styled.input`
     width: calc(100% - 35px);
     height: 30px;
     margin:5px 0;

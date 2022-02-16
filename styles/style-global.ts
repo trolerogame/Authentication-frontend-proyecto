@@ -33,7 +33,7 @@ export const StyleGlobal = createGlobalStyle`
     }
 `
 
-export const HeaderStyle = styled.header`
+export const HeaderStyle:any = styled.header`
     align-items: center;
     position: relative;
     left:0;

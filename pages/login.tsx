@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useMutation } from '@apollo/client'
 import { useRouter } from 'next/router'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
+import HeaderComponent from '../components/HeadComponent'
 import LoginRegister from '../components/LoginRegister'
 import { Context } from '../context/context'
 import useError from '../hook/useError'
@@ -40,21 +41,24 @@ const login = () => {
 	},[router])
 
 	return (
-		<LoginRegister
-			handleSubmit={submitLogin}
-			title="Login"
-			text="Don't have an account yet?"
-			linkText="register"
-			link="register"
-			vlEmail={validateEmail}
-			vlPassword={validatePassword}
-			email={email}
-			error={error}
-			password={password}
-			setValidateEmail={setValidateEmail}
-			setValidatePassword={setValidatePassword}
-			buttonText="Login"
-		/>
+		<>
+			<HeaderComponent title='Login' />
+			<LoginRegister
+				handleSubmit={submitLogin}
+				title="Login"
+				text="Don't have an account yet?"
+				linkText="register"
+				link="register"
+				vlEmail={validateEmail}
+				vlPassword={validatePassword}
+				email={email}
+				error={error}
+				password={password}
+				setValidateEmail={setValidateEmail}
+				setValidatePassword={setValidatePassword}
+				buttonText="Login"
+			/>
+		</>
 	)
 }
 

@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useContext, useEffect,useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import LoginRegister from '../components/LoginRegister'
+import HeaderComponent from '../components/HeadComponent'
 import useInput from '../hook/useInput'
 import useError from '../hook/useError'
 import { Context } from '../context/context'
@@ -43,22 +44,25 @@ const register = () => {
     },[router])
 
 	return (
-		<LoginRegister
-			handleSubmit={submitRegister}
-			title="Join thousands of learners from around the world"
-			texthigh="Master web development by making real-life projects. There are multiple paths for you to choose"
-			text="adready a member?"
-			linkText="login"
-			link="login"
-			email={email}
-			vlEmail={validateEmail}
-			vlPassword={validatePassword}
-			error={error}
-			password={password}
-			setValidateEmail={setValidateEmail}
-			setValidatePassword={setValidatePassword}
-			buttonText="Start coding now"
-		/>
+		<>
+			<HeaderComponent title='Register' />
+			<LoginRegister
+				handleSubmit={submitRegister}
+				title="Join thousands of learners from around the world"
+				texthigh="Master web development by making real-life projects. There are multiple paths for you to choose"
+				text="adready a member?"
+				linkText="login"
+				link="login"
+				email={email}
+				vlEmail={validateEmail}
+				vlPassword={validatePassword}
+				error={error}
+				password={password}
+				setValidateEmail={setValidateEmail}
+				setValidatePassword={setValidatePassword}
+				buttonText="Start coding now"
+			/>
+		</>
 	)
 }
 

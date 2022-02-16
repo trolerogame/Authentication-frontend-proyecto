@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useContext, useEffect } from 'react'
 import Image from 'next/image'
+import HeaderComponent from '../components/HeadComponent'
 import { useRouter } from 'next/router'
 import { Context } from '../context/context'
 import { useQuery } from '@apollo/client'
@@ -29,6 +30,7 @@ const personalInfo = () => {
 	}, [context, data, router])
 	return (
 		<>
+			<HeaderComponent title='Personal Info' />
 			<Header
 				username={context.user ? context.user.username : ''}
 				photo={context.user ? context.user.photo : ''}

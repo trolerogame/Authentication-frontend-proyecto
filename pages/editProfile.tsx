@@ -3,6 +3,7 @@ import React, { FormEvent, useState, useContext, useEffect } from 'react'
 import Link from 'next/link'
 import InputEditItem from '../components/InputEditItem'
 import Header from '../components/Header'
+import HeaderComponent from '../components/HeadComponent'
 import { useRouter } from 'next/router'
 import EditFile from '../components/editFile'
 import useInput from '../hook/useInput'
@@ -66,6 +67,7 @@ const editProfile = () => {
 
 	return (
 		<ContainCardForm style={{ marginTop: '100px' }}>
+			<HeaderComponent title='Edit Profile' />
 			<Header username={user && user.username} photo={user && user.photo} />
 			<div style={{ marginLeft: '15px' }}>
 				<Link href="/personalInfo">Back</Link>

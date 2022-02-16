@@ -14,7 +14,7 @@ const Header = ({ username, photo }: { username: string; photo: string }) => {
 	const [rotate, setRotate] = useState(false)
 	const context = useContext(Context)!
 	return (
-		<HeaderStyle className="flex justify-between" rotate={rotate}>
+		<HeaderStyle className="flex justify-between" rotate={rotate ? rotate : undefined}>
 			<div id="img" className="flex align-center">
 				<Image src={Logo} width={150} alt="logo" />
 			</div>

@@ -5,7 +5,7 @@ import { createUploadLink } from 'apollo-upload-client'
 function clientFn(token:string){
     return new ApolloClient({
         link: createUploadLink({
-            uri: 'http://localhost:3003/graphql',
+            uri: 'https://authentication-node-server.herokuapp.com/graphql',
             headers:{
                 authorization: token ? 'Bearer ' + token : ''
             }

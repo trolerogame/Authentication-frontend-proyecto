@@ -46,7 +46,7 @@ export const InputStyle:any = styled.input`
     border-radius:5px;
     outline: none;
     border:1px solid ${({ validate }: any) =>
-			validate === null ? '#dbdbdb' : (validate === true ? 'green' : 'rgb(235,87,87)')};
+			validate === null ? '#dbdbdb' : (validate === true ? '#2ecc71' : 'rgb(235,87,87)')};
     padding-left:30px;
 
 `

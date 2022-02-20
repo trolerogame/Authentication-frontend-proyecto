@@ -2,7 +2,6 @@ import styled,{createGlobalStyle} from 'styled-components';
 
 
 export const StyleGlobal = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@400;500&family=Source+Sans+Pro:wght@300;600&display=swap');
     body{
         margin:0;
         padding:0;

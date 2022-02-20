@@ -8,7 +8,7 @@ const index = () => {
     if(getTokenCookie()) router.push('/login')
   },[router])
   return (
-    <div>index</div>
+    <div></div>
   )
 }
 

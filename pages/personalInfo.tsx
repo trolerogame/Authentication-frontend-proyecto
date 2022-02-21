@@ -27,7 +27,6 @@ const personalInfo = () => {
 	useEffect(() => {
 		if (!getTokenCookie()) router.push('/login')
 		context.setUser(data && data.getUser)
-		console.log(context.user ? context.user : '')
 	}, [context, data, router])
 	return (
 		<>

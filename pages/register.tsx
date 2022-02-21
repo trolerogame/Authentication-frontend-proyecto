@@ -29,7 +29,6 @@ const register = () => {
 				},
 			})
 			delete created.data.createUser.__typename
-			console.log(created.data)
 			const {error:errorUser} = created.data.createUser
 			setErrorFn(errorUser)
 			if(errorUser) return

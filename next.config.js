@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
+    domains: ['authentication-node-server.herokuapp.com'],
   }
 }

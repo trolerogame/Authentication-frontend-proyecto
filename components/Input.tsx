@@ -38,13 +38,13 @@ const Input = ({
 					name={type}
 					validate={vl}
 					onKeyUp={(e:any) => {
-						const value = e.currentTarget.value
-						setValidate(
-							value ? value.match(
-								regInput[type as reg] 
-							) !== null : null
-						)
-					}
+							const value = e.currentTarget.value
+							setValidate(
+								value ? value.match(
+									regInput[type as reg] 
+								) !== null : null
+							)
+						}
 					}
 					placeholder={`Enter your ${type}...`}
 				/>

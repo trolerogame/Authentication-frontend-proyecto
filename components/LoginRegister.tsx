@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+
 import Input from '../components/Input'
 import { FormSchemaType } from '../utils/types'
 import { ContainCardForm,Card, ButtonForm } from '../styles/style-loginRegister'
@@ -29,7 +31,7 @@ const LoginRegister = ({
 					<b>{title}</b>
 					{texthigh && <p>{texthigh}</p>}
 				</div>
-				{error.vl && <p>{error.message}</p>}
+				{error.vl && <p className='error'>{error.message}</p>}
 				<form className="flex flex-column" onSubmit={handleSubmit}>
 					<Input
 						reference={email}

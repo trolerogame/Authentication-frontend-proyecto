@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['authentication-node-server.herokuapp.com'],
+    domains: ['res.cloudinary.com'],
   }
 }

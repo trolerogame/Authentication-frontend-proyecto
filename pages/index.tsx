@@ -5,7 +5,7 @@ import {getTokenCookie} from '../utils/getTokenCookie'
 const index = () => {
   const router = useRouter()
   useEffect(() => {
-    if(getTokenCookie()) router.push('/login')
+    if(!getTokenCookie()) router.push('/login')
   },[router])
   return (
     <div></div>

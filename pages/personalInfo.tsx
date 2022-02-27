@@ -23,11 +23,9 @@ import Header from '../components/Header'
 const personalInfo = () => {
 	const router = useRouter()
 	const context = useContext(Context)!
-	const { data } = useQuery(context.GET_USER)
 	useEffect(() => {
 		if (!getTokenCookie()) router.push('/login')
-		context.setUser(data && data.getUser)
-	}, [context, data, router])
+	}, [router])
 	return (
 		<>
 			<HeaderComponent title='Personal Info' />

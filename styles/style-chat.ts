@@ -303,11 +303,11 @@ export const MessageAndDate = styled.div`
 `
 
 export const DropdownChat = styled(DropDown)`
-	bottom:0px;
+	bottom:0px !important;
 	top:-180px;
 	left:-150px;
-	background:#252329;
-	border:1px solid #3C393F;
+	background:#252329 !important;
+	border:1px solid #3C393F!important;
 	height:160px;
 	& button, a {
 		cursor:pointer;

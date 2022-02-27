@@ -66,7 +66,7 @@ const Chat = ({ setIsTrue }: any) => {
 						type="text"
 						name="chat"
 						placeholder="Type a message here"
-						autoComplete='false'
+						autoComplete='off'
 					/>
 					<SendChat>
 						<Image

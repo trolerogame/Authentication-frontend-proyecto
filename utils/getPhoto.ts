@@ -1,7 +1,7 @@
 export const getPhoto = (file:any) => {
     const data = new FormData()
     data.append('file', file)
-    return fetch('https://authentication-node-server.herokuapp.com/uploadFile', {
+    return fetch('http://localhost:3003/uploadFile', {
         method: 'POST',
         body: data,
     })

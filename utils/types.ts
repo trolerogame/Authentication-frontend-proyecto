@@ -48,4 +48,19 @@ export interface ContextType {
 	LOGIN_USER: DocumentNode
 	EDIT_USER: DocumentNode
 	logout():void
+	createGroup(data: CreateGroup):Promise<boolean>
+	groups:any
+	getGroups():void,
+	getGroup(id:string):void
+	actualGroup:any
+	setActualGroup:any
+	viewMembers:boolean
+	setViewMembers:any
+	socket:any
+	saveMessage(message:any):void
+}
+
+export type CreateGroup = {
+	name:string
+	description:string
 }

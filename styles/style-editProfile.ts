@@ -75,5 +75,6 @@ export const ContainLabel = styled.div`
 	}
 	img{
 		border-radius:10px;
+		object-fit: cover;
 	}
 `

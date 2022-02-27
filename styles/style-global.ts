@@ -26,6 +26,12 @@ export const StyleGlobal = createGlobalStyle`
     .justify-between{
         justify-content: space-between;
     }
+    .justify-end{
+        justify-content: flex-end;
+    }
+    .align-end{
+        align-items: flex-end;
+    }
     .error{
         font-size:18px;
         color:red;
@@ -64,12 +70,14 @@ export const HeaderStyle:any = styled.header`
     }
     button img{
         border-radius:10px;
+        object-fit: cover;
     }
     @media (min-width: 768px){
         position: fixed;
         padding:0;
         #img{
             margin-left:50px;
+
         }
         button{
             margin-right:50px;

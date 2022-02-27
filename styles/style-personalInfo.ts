@@ -47,6 +47,7 @@ export const ElementInfo = styled.li`
     }
     img{
         border-radius:10px;
+        object-fit:cover;
     }
     @media (min-width: 768px) {
         p{

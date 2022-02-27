@@ -8,7 +8,7 @@ import socketIOClient from 'socket.io-client'
 export const Context = createContext<ContextType | null>(null)
 
 export default function ContextUse(props: any) {
-	const endpoint = 'https://authentication-socket-server.herokuapp.com'
+	const endpoint = 'https://authentication-socket.herokuapp.com'
 	const router = useRouter()
 	const [user, setUser] = useState(null)
 	const [groups, setGroups] = useState<any[]>([])

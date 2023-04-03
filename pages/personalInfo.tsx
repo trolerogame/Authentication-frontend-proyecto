@@ -4,7 +4,6 @@ import Image from 'next/image'
 import HeaderComponent from '../components/HeadComponent'
 import { useRouter } from 'next/router'
 import { Context } from '../context/context'
-import { useQuery } from '@apollo/client'
 import { dataUserConvert } from '../utils/dataUserConvert'
 import Avatar from '../public/R.png'
 import {

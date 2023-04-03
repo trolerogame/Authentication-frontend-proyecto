@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { createContext, useCallback, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { gql, useQuery } from '@apollo/client'
 import { ContextType, CreateGroup } from '../utils/types'

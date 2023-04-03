@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Logo from '../public/devchallenges.svg'
 import Avatar from '../public/R.png'
@@ -9,7 +9,6 @@ import DropdownUse from './DropdownUse'
 
 const Header = ({ username, photo }: { username: string; photo: string }) => {
 	const [rotate, setRotate] = useState(false)
-	const context = useContext(Context)!
 	return (
 		<HeaderStyle className="flex justify-between" rotate={rotate ? rotate : undefined}>
 			<div id="img" className="flex align-center">

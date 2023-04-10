@@ -1,7 +1,8 @@
+import { urlGraphql } from "./urlApis"
 export const getPhoto = (file:any) => {
     const data = new FormData()
     data.append('file', file)
-    return fetch('https://authentication-node-server.herokuapp.com/uploadFile', {
+    return fetch(`${urlGraphql}/uploadFile`, {
         method: 'POST',
         body: data,
     })

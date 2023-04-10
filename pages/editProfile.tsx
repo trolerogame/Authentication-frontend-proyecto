@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import EditFile from '../components/editFile'
 import useInput from '../hook/useInput'
 import { ContainCardForm } from '../styles/style-loginRegister'
-import { CardEdit, Save } from '../styles/style-editProfile'
+import { CardEdit, Save, ContainerForm } from '../styles/style-editProfile'
 import { Context } from '../context/context'
 import { useMutation } from '@apollo/client'
 import { setTokenCookie } from '../utils/setTokenCookie'
@@ -66,55 +66,57 @@ const editProfile = () => {
 	}, [router])
 
 	return (
-		<ContainCardForm style={{ marginTop: '100px' }}>
+		<ContainCardForm style={{marginTop:'100px'}}>
 			<HeaderComponent title='Edit Profile' />
 			<Header username={user && user.username} photo={user && user.photo} />
-			<div style={{ marginLeft: '15px' }}>
-				<Link href="/personalInfo">Back</Link>
-			</div>
-			<CardEdit>
-				<div id="containText">
-					<h3>Change Info</h3>
-					<p>Changes will be reflected to every services</p>
+			<ContainerForm >
+				<div style={{ marginLeft: '15px' }}>
+					<Link href="/personalInfo">Back</Link>
 				</div>
-				<form onSubmit={editUserFn}>
-					<EditFile setFile={setFile} img={user && user.photo} />
-					<InputEditItem
-						vl={vlName}
-						reference={name}
-						type="text"
-						label="Name"
-						set={setVlName}
-					/>
-					<InputEditItem
-						vl={vlBio}
-						reference={bio}
-						type="Bio"
-						set={setVlBio}
-						textarea
-					/>
-					<InputEditItem
-						vl={vlPhone}
-						reference={phone}
-						type="Phone"
-						set={setVlPhone}
-					/>
-					<InputEditItem
-						vl={vlEmail}
-						reference={email}
-						type="Email"
-						set={setVlEmail}
-					/>
-					<InputEditItem
-						vl={vlPassword}
-						reference={password}
-						type="Password"
-						set={setVlPassword}
-					/>
-					{error.vl && <p className="error">{error.message}</p>}
-					<Save>Save</Save>
-				</form>
-			</CardEdit>
+				<CardEdit>
+					<div id="containText">
+						<h3>Change Info</h3>
+						<p>Changes will be reflected to every services</p>
+					</div>
+					<form onSubmit={editUserFn}>
+						<EditFile setFile={setFile} img={user && user.photo} />
+						<InputEditItem
+							vl={vlName}
+							reference={name}
+							type="text"
+							label="Name"
+							set={setVlName}
+						/>
+						<InputEditItem
+							vl={vlBio}
+							reference={bio}
+							type="Bio"
+							set={setVlBio}
+							textarea
+						/>
+						<InputEditItem
+							vl={vlPhone}
+							reference={phone}
+							type="Phone"
+							set={setVlPhone}
+						/>
+						<InputEditItem
+							vl={vlEmail}
+							reference={email}
+							type="Email"
+							set={setVlEmail}
+						/>
+						<InputEditItem
+							vl={vlPassword}
+							reference={password}
+							type="Password"
+							set={setVlPassword}
+						/>
+						{error.vl && <p className="error">{error.message}</p>}
+						<Save>Save</Save>
+					</form>
+				</CardEdit>
+			</ContainerForm>
 		</ContainCardForm>
 	)
 }

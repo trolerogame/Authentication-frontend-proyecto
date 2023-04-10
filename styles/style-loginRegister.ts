@@ -4,8 +4,9 @@ import styled from 'styled-components'
 export const ContainCardForm = styled.div`
     width: 100%;
     height: 100vh;
-    display:grid;
-    place-content:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     b{
         margin:0;
         display:block;
@@ -25,7 +26,6 @@ export const ContainCardForm = styled.div`
 `
 
 export const Card = styled.div`
-    width: 300px;
     border-radius:10px;
     border:1px solid #dbdbdb;
     display: flex;

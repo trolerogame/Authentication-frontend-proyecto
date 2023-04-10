@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 import { Card, InputStyle, ButtonForm } from './style-loginRegister'
 
-export const CardEdit = styled(Card)`
+export const ContainerForm = styled.div`
 	width: 700px;
-	padding: 10px 35px;
-	margin: 10px 0;
+	max-width: 700px;
+
+`
+
+export const CardEdit = styled(Card)`
+	border:none;
 	h3 {
 		font-size: 23px;
 		margin: 0;
@@ -12,10 +16,8 @@ export const CardEdit = styled(Card)`
 	p {
 		margin: 0;
 	}
-	@media (max-width: 768px) {
-		border: none;
-		width: calc(100vw - 20px);
-		padding: 10px;
+	@media (min-width:768px) {
+		border:1px solid #dbdbdb;
 	}
 `
 

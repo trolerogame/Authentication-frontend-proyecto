@@ -309,7 +309,7 @@ export const DropdownChat = styled(DropDown)`
 	background:#252329 !important;
 	border:1px solid #3C393F!important;
 	height:160px;
-	& button, a {
+	& button, span {
 		cursor:pointer;
 	}
 	& button{
@@ -320,11 +320,11 @@ export const DropdownChat = styled(DropDown)`
 		padding-top:20px;
 		gap:10px;
 	}
-	a{
+	span{
 		color:#fff;
 		gap:10px;
 	}
-	a:hover{
+	span:hover{
 		background:#3C393F;
 	}
 `

@@ -40,7 +40,7 @@ export const StyleGlobal = createGlobalStyle`
 
 export const HeaderStyle:any = styled.header`
     align-items: center;
-    position: relative;
+    position: fixed;
     left:0;
     top:0;
     width:100%;
@@ -65,6 +65,7 @@ export const HeaderStyle:any = styled.header`
         outline:none;
         background-color: transparent;
         align-items: center;
+        justify-content: center;
         gap:10px;
         cursor:pointer;
     }
@@ -73,8 +74,7 @@ export const HeaderStyle:any = styled.header`
         object-fit: cover;
     }
     @media (min-width: 768px){
-        position: fixed;
-        padding:0;
+        
         #img{
             margin-left:50px;
 
@@ -105,18 +105,19 @@ export const DropDown = styled.div`
         border-top:1px solid #dbdbdb;
         color:rgb(235,87,87);
     }
-    a,button{
+    span,button{
         font-size:15px;
         text-align:start;
     }
-    a{
+    span{
         text-decoration:none;
         color:#333;
         padding:10px;
         border-radius:7px;
         transition:all .1s linear;
+        cursor: pointer;
     }
-    a:hover{
+    span:hover{
         background:#eee;
     }
 `

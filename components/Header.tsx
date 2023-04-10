@@ -10,7 +10,7 @@ import DropdownUse from './DropdownUse'
 const Header = ({ username, photo }: { username: string; photo: string }) => {
 	const [rotate, setRotate] = useState(false)
 	return (
-		<HeaderStyle className="flex justify-between" rotate={rotate ? rotate : undefined}>
+		<HeaderStyle className="flex justify-between" rotate={rotate ? rotate.toString() : undefined}>
 			<div id="img" className="flex align-center">
 				<Image src={Logo} width={150} alt="logo" />
 			</div>

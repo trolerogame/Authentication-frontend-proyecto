@@ -4,16 +4,16 @@ import { useRouter } from 'next/router'
 import { gql, useQuery } from '@apollo/client'
 import { ContextType, CreateGroup } from '../utils/types'
 import { getTokenCookie } from '../utils/getTokenCookie'
+import { urlSocket } from '../utils/urlApis'
 import socketIOClient from 'socket.io-client'
 export const Context = createContext<ContextType | null>(null)
 
 export default function ContextUse(props: any) {
-	const endpoint = 'https://authentication-socket.herokuapp.com'
 	const router = useRouter()
 	const [user, setUser] = useState(null)
 	const [groups, setGroups] = useState<any[]>([])
 	const [viewMembers, setViewMembers] = useState(false)
-	const [memori,setMemori] = useState<any[]>([])
+	const [memori,setMemory] = useState<any[]>([])
 	const [actualGroup, setActualGroup] = useState<any | null>(null)
 	const [socket, setSocket] = useState<any | null>(null)
 	const UPLOAD_FILE = gql`
@@ -86,7 +86,7 @@ export default function ContextUse(props: any) {
 	`
 	const createGroup = async (data: CreateGroup) => {
 		try {
-			const res = await fetch(endpoint + '/group/create', {
+			const res = await fetch(urlSocket + '/group/create', {
 				method: 'POST',
 				body: JSON.stringify({ ...data }),
 				headers: {
@@ -103,7 +103,7 @@ export default function ContextUse(props: any) {
 		}
 	}
 	const getGroups = async () => {
-		const res = await fetch(endpoint + '/group', {
+		const res = await fetch(urlSocket + '/group', {
 			headers: {
 				Authorization: 'Bearer ' + getTokenCookie(),
 			},
@@ -117,14 +117,14 @@ export default function ContextUse(props: any) {
 		if(index !== -1) {
 			return setActualGroup(memori[index])
 		}
-		const res = await fetch(endpoint + `/group/${id}`, {
+		const res = await fetch(urlSocket + `/group/${id}`, {
 			headers: {
 				Authorization: 'Bearer ' + getTokenCookie(),
 			},
 		})
 		const groupGet = await res.json()
 		setActualGroup(groupGet)
-		setMemori([...memori,groupGet])
+		setMemory([...memori,groupGet])
 	}
 
 	const logout = () => {
@@ -148,7 +148,7 @@ export default function ContextUse(props: any) {
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
-		const socketIo = socketIOClient(endpoint)
+		const socketIo = socketIOClient(urlSocket)
 		socketIo.on('data', (message: any) => {
 			setActualGroup((group: any) =>
 				group && group._id === message.idGroup
@@ -158,7 +158,7 @@ export default function ContextUse(props: any) {
 					  }
 					: group
 			)
-			setMemori((groups:any) => {
+			setMemory((groups:any) => {
 				const group = groups.findIndex((group:any) => group._id == message.idGroup)
 				if(group !== -1){
 					groups[group] = {

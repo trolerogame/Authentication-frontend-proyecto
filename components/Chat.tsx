@@ -12,6 +12,7 @@ import {
 } from '../styles/style-chat'
 import { Context } from '../context/context'
 import Message from './Groups/Message'
+import AvatarDefault from '../public/R.png'
 const Chat = ({ setIsTrue }: any) => {
 	const { socket, user, actualGroup,saveMessage } = useContext(Context)!
 	const messageEl:any = useRef(null)!
@@ -47,7 +48,7 @@ const Chat = ({ setIsTrue }: any) => {
 				<Image
 					width={18}
 					height={18}
-					src={bars}
+					src={bars || AvatarDefault}
 					alt="bars"
 					onClick={() => setIsTrue(true)}
 				/>

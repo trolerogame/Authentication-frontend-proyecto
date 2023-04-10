@@ -11,6 +11,7 @@ const editFile = ({ setFile, img }: any) => {
 		width: 300,
 	})
 	const fileChange = ({ target: { files } }: any) => {
+		if(!files[0] && imagePreview) return 
 		files[0] && files[0].type.match(/image-*/)
 			? setFile(files[0])
 			: setFile(null)
